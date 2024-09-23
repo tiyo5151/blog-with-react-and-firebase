@@ -1,0 +1,22 @@
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(90deg, #2794ec, #6ee5e9);
+  height: 3rem;
+}
+
+nav a {
+  text-decoration: wavy;
+  color: aliceblue;
+  transition: all 0.3s;
+}
+
+nav a:hover {
+  color: #ffd92e;
+}
+
+nav a svg {
+  margin-right: 0.5rem;
+}

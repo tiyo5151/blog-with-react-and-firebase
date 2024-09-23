@@ -1,0 +1,9 @@
+.googleLogin {
+  display: flex;
+}
+
+.googleLogin svg {
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+}
