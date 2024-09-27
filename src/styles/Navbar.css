@@ -2,12 +2,15 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   background: linear-gradient(90deg, #2794ec, #6ee5e9);
   height: 3rem;
 }
 
 nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: wavy;
   color: aliceblue;
   transition: all 0.3s;

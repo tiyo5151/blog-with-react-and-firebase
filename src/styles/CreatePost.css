@@ -1,0 +1,70 @@
+.createPostPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  background: linear-gradient(360deg, #008cff, #ffffff);
+}
+
+.postContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  width: 500px;
+  gap: 1rem;
+  padding: 0px 1rem;
+  box-shadow: 0px 15px 15px 0px #000000;
+  border-radius: 40px;
+}
+
+.postContainer h1 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.postContainer input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 30px;
+  outline: none;
+  padding: 0 1rem;
+}
+
+.postContainer textarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 120px;
+  outline: none;
+  padding: 1rem;
+}
+
+.postButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-radius: 40px;
+  background-color: #192f60;
+  color: white;
+  border: none;
+  box-shadow: 0px 10px 20px 0px #777777;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.postButton:hover {
+  background-color: #1f3d7a;
+}
+
+.postButton:active {
+  transform: translateY(3px);
+  box-shadow: none;
+}

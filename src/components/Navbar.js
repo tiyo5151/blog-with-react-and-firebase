@@ -9,7 +9,7 @@ import {
   faRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
 
-function Navbar() {
+function Navbar({ isAuth }) {
   return (
     <nav>
       <Link to="/">
@@ -20,16 +20,18 @@ function Navbar() {
         <FontAwesomeIcon icon={faShip} />
         投稿
       </Link>
-      <Link to="/login">
-        <FontAwesomeIcon icon={faRightToBracket} />
-        ログイン
-      </Link>
-      <Link to="/logout">
-        <FontAwesomeIcon icon={faRightFromBracket} />
-        ログアウト
-      </Link>
+      {!isAuth ? (
+        <Link to="/login">
+          <FontAwesomeIcon icon={faRightToBracket} />
+          ログイン
+        </Link>
+      ) : (
+        <Link to="/logout">
+          <FontAwesomeIcon icon={faRightFromBracket} />
+          ログアウト
+        </Link>
+      )}
     </nav>
   );
 }
-
 export default Navbar;

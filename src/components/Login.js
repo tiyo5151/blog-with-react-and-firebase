@@ -3,16 +3,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import '../styles/Login.css';
 import { signInWithPopup } from 'firebase/auth';
-import { auth } from '../firebase';
+import { auth, provider } from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function Login({ isAuth, setIsAuth }) {
+  const navigate = useNavigate();
   const LogInWithGoogle = () => {
-    signInWithPopup(auth, provider).then((result) => {});
+    signInWithPopup(auth, provider).then((result) => {
+      // console.log(result);
+      localStorage.setItem('isAuth', true);
+      setIsAuth(true);
+      navigate('/');
+    });
   };
   return (
     <div>
       <p>ログインして始める</p>
-      <button className="googleLogin" onClick={logInWithGoogle}>
+      <button className="googleLogin" onClick={LogInWithGoogle}>
         <FontAwesomeIcon icon={faGoogle} />
         Googleでログイン
       </button>
@@ -21,6 +28,3 @@ function Login() {
 }
 
 export default Login;
-function dignInWithPopup(auth: any, provider: any) {
-  throw new Error('Function not implemented.');
-}
