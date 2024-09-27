@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
@@ -13,6 +13,13 @@ function Logout({ isAuth, setIsAuth }) {
       navigate('/login');
     });
   };
+
+  useEffect(() => {
+    if (!isAuth) {
+      navigate('/login');
+    }
+  }, []);
+
   return (
     <div>
       <p>ログアウト</p>

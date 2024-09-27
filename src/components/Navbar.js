@@ -16,20 +16,23 @@ function Navbar({ isAuth }) {
         <FontAwesomeIcon icon={faHouse} />
         ホーム
       </Link>
-      <Link to="/createpost">
-        <FontAwesomeIcon icon={faShip} />
-        投稿
-      </Link>
+
       {!isAuth ? (
         <Link to="/login">
           <FontAwesomeIcon icon={faRightToBracket} />
           ログイン
         </Link>
       ) : (
-        <Link to="/logout">
-          <FontAwesomeIcon icon={faRightFromBracket} />
-          ログアウト
-        </Link>
+        <>
+          <Link to="/createpost">
+            <FontAwesomeIcon icon={faShip} />
+            投稿
+          </Link>
+          <Link to="/logout">
+            <FontAwesomeIcon icon={faRightFromBracket} />
+            ログアウト
+          </Link>
+        </>
       )}
     </nav>
   );
