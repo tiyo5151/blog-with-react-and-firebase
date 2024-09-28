@@ -9,7 +9,7 @@ import {
   faRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
 
-function Navbar({ isAuth }) {
+function Navbar({ isAuth, userName }) {
   return (
     <nav>
       <Link to="/">
@@ -34,6 +34,7 @@ function Navbar({ isAuth }) {
           </Link>
         </>
       )}
+      {userName !== '' && <div className="username">user:{userName}</div>}
     </nav>
   );
 }

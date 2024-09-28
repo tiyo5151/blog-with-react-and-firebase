@@ -9,15 +9,22 @@ import { useState } from 'react';
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'));
+  const [userName, setUserName] = useState('');
   return (
     <Router>
-      <Navbar isAuth={isAuth} />
+      <Navbar isAuth={isAuth} userName={userName} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
 
         <Route
           path="/login"
-          element={<Login isAuth={isAuth} setIsAuth={setIsAuth} />}
+          element={
+            <Login
+              isAuth={isAuth}
+              setIsAuth={setIsAuth}
+              setUserName={setUserName}
+            />
+          }
         ></Route>
 
         <Route
@@ -26,7 +33,13 @@ function App() {
         ></Route>
         <Route
           path="/logout"
-          element={<Logout isAuth={isAuth} setIsAuth={setIsAuth} />}
+          element={
+            <Logout
+              isAuth={isAuth}
+              setIsAuth={setIsAuth}
+              setUserName={setUserName}
+            />
+          }
         ></Route>
       </Routes>
     </Router>

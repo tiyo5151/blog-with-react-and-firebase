@@ -3,13 +3,14 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 
-function Logout({ isAuth, setIsAuth }) {
+function Logout({ isAuth, setIsAuth, setUserName }) {
   const navigate = useNavigate();
 
   const LogInWithGoogle = () => {
     signOut(auth).then(() => {
       localStorage.clear();
       setIsAuth(false);
+      setUserName('');
       navigate('/login');
     });
   };

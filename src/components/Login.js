@@ -6,13 +6,14 @@ import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 
-function Login({ setIsAuth }) {
+function Login({ setIsAuth, setUserName }) {
   const navigate = useNavigate();
   const LogInWithGoogle = () => {
     signInWithPopup(auth, provider).then((result) => {
       // console.log(result);
       localStorage.setItem('isAuth', true);
       setIsAuth(true);
+      setUserName(auth.currentUser.displayName);
       navigate('/');
     });
   };
